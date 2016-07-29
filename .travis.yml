@@ -1,9 +1,5 @@
 language: java
 sudo: required
 script: mvn clean verify
-notifications:
-  email:
-    recipients:
-      - siddharthcse7@gmail.com
-      - siddharth.sachdeva@newgen.co.in
-      - siddharth@csitec.in
+after_success:
+  - mvn jacoco:report coveralls:report
